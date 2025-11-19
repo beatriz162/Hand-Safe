@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Bia",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp8266-nodemcu", "id": "esp", "top": -20, "left": -20, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir", "top": 140, "left": -40, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo", "top": 140, "left": 160, "attrs": {} },
+    { "type": "wokwi-ultrasonic-sensor", "id": "ultra", "top": 10, "left": 200, "attrs": {} }
+  ],
+  "connections": [
+    ["pir:VCC", "esp:VIN", "red", ["v0"]],
+    ["pir:GND", "esp:GND", "black", ["v0"]],
+    ["pir:OUT", "esp:D2", "green", ["v0"]],
+    
+    ["servo:V+", "esp:VIN", "red", ["v0"]],
+    ["servo:GND", "esp:GND", "black", ["v0"]],
+    ["servo:CTRL", "esp:D5", "blue", ["v0"]],
+    
+    ["ultra:VCC", "esp:VIN", "red", ["v0"]],
+    ["ultra:GND", "esp:GND", "black", ["v0"]],
+    ["ultra:TRIG", "esp:D6", "yellow", ["v0"]],
+    ["ultra:ECHO", "esp:D7", "purple", ["v0"]]
+  ],
+  "dependencies": {}
+}
